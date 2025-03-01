@@ -1,0 +1,101 @@
+% Winter Theme
+% Author: Prayag Yadav
+% Website: https://www.prayagyadav.com
+
+% Main Tex
+
+\documentclass[11pt,xcolor={dvipsnames},hyperref={luatex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+
+\usepackage{WinterTheme}
+\usepackage{minted}
+\usepackage{fancyvrb,xcolor}
+\usepackage{tikz-feynman}
+\usepackage{graphicx}
+\usepackage{smartdiagram}
+\usepackage{xcolor-material}
+\usepackage{docmute}
+
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% To use with pgf plots
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.14}
+%textwidth is 4.64658 inches
+
+
+% Enter title of presentation PDF:
+\hypersetup{pdftitle={Title}}
+
+%Code blocks
+
+\newcommand{\boxempty}{\color{black}$\square$}
+\newcommand{\blackbox}{\color{black} \ding{110}}
+\newcommand{\boxtick}{\color{black}\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$}
+\newcommand{\boxcross}{\color{black}\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$}
+
+\newenvironment{VerbExample}
+{\example  \semiverbatim}
+{\endsemiverbatim \example}
+
+\newminted{bash}{gobble=2}
+\newminted{python}{gobble=2}
+%\newminted{python}{gobble=2,linenos}
+\newminted{text}{gobble=2}
+
+\begin{document}
+
+\title{\color{white} Insert Title}
+
+\author{
+	\color{white}
+	\vskip-0.9cm
+	\textbf{Insert Subtitle} \\
+	\hfill
+	\\
+	\href{https://www.linktoyourwebsite.com}{Author Name \ding{218}}\\
+\small{Denomination \\
+3rd March 2025} \\
+\color{white}{ \footnotesize
+
+	}
+}
+
+\date{}
+
+%\logo{\includegraphics[width=.1\textwidth]{img/cmslab_logo_white.png}}
+
+\titlegraphic{
+	\vskip-1cm
+	\begin{columns}[onlytextwidth]
+		\includegraphics[width=1.4cm]{img/uoh_logo_white.png}~%
+	\end{columns}
+}
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{img/FCC_aerial_blurred.jpg}}
+\begin{frame}
+	\titlepage
+\end{frame}
+
+}
+{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{img/bg.png}}
+\begin{frame}
+	\frametitle{Outline}
+
+	\begingroup
+	\setbeamercolor{section in toc}{fg=white}
+	\setbeamercolor{subsection in toc}{fg=white}
+	\tableofcontents[sections={1-8}]
+
+	\endgroup
+
+\end{frame}
+
+% Fill out content of presentation:
+	\input{WinterTheme_content}
+
+\lastslide
+
+}
+\end{document}

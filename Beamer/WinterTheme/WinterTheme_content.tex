@@ -1,0 +1,87 @@
+% Winter Theme
+% Author: Prayag Yadav
+% Website: https://www.prayagyadav.com
+
+% Content Tex
+
+\documentclass[11pt,xcolor={dvipsnames},hyperref={luatex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+%\usepackage{presentation}
+%\usepackage{jupyter}
+\usepackage{presentation}
+\usepackage[breakable]{tcolorbox}
+\usepackage{minted}
+\usepackage{fancyvrb,xcolor}
+\usepackage{tikz-feynman}
+\usepackage{graphicx}
+\usepackage{smartdiagram}
+\usepackage{xcolor-material}
+
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% To use with pgf plots
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.14}
+%textwidth is 4.64658 inches
+
+
+% Enter title of presentation PDF:
+\hypersetup{pdftitle={Title}}
+
+%Code blocks
+
+\newcommand{\boxempty}{\color{black}$\square$}
+\newcommand{\boxtick}{\color{black}\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\tiny \ding{52}}}$\square$}
+\newcommand{\boxcross}{\color{black}\rlap{\raisebox{0.3ex}{\hspace{0.4ex}\scriptsize \ding{56}}}$\square$}
+
+\newenvironment{VerbExample}
+{\example  \semiverbatim}
+{\endsemiverbatim \example}
+
+\newminted{bash}{gobble=2}
+\newminted{python}{gobble=2}
+%\newminted{python}{gobble=2,linenos}
+\newminted{text}{gobble=2}
+
+\begin{document}
+
+\section{First Section }
+
+\begin{frame}
+	\heading{First Section}
+\end{frame}
+
+\begin{frame}[fragile] % don't forget fragile when using code boxes or feynman diagrams
+	\frametitle{Insert Heading}
+
+	\begin{itemize}
+		\item You can enter your \textbf{text} here.
+		\item And, of course, all the $ f_O\mathbb{R}mu=lae$.
+	\end{itemize}
+
+		\begin{graybox}[Code block name]
+		\begin{bashcode}
+		prayag@hp-fedora:~$
+		\end{bashcode}
+	\end{graybox}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Feynman Diagrams}
+	\begin{tcolorbox}[title=Can also add feynman diagrams]
+		\begin{figure}
+			\centering
+			$$e^+e^- \rightarrow ZH \rightarrow \mu^+ \mu^- + X$$
+			\feynmandiagram [horizontal=a to b] {
+				i1 [particle=\(e^{-}\)] -- [fermion] a -- [fermion] i2 [particle=\(e^{+}\)],
+				a -- [photon, edge label=\(Z\)] b,
+				f1 -- [photon,edge label=\( Z \)] b -- [scalar] f2 [particle=\(H (Recoil)\)],
+				f1--[fermion]m1[particle=\( \mu^{-} \)],
+				m2[particle=\( \mu^{+} \)] --[fermion]f1,
+			};
+		\end{figure}
+	\end{tcolorbox}
+\end{frame}
+
+\end{document}

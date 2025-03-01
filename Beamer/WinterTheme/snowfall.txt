@@ -1,0 +1,24 @@
+\begin{frame}[fragile]
+\footnotesize
+\begin{verbatim}
+ 
+     ...        *                        *       *
+      ...   *         * ..   ...                        *
+ *      ...        *           *            *
+          ...               ...                          *
+            ..                            *
+    *        ..        *  End of the presentation   *
+           __##____              *                      *
+  *    *  /  ##  ****                   *
+         /        ****               *         *  X   *
+   *    /        ******     *                    XXX      *
+       /___________*****          *             XXXXX
+        |            ***               *       XXXXXXX   X
+    *   | ___        |                    *   XXXXXXXX  XXX
+  *     | | |   ___  | *       *             XXXXXXXXXXXXXXX
+        | |_|   | |  ****             *           X   XXXXXXX
+    *********** | | *******      *                X      X
+************************************************************
+ 
+\end{verbatim}
+\end{frame}
